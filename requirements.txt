@@ -1,0 +1,7 @@
+django
+gunicorn
+django-heroku
+tweepy
+datetime
+flask
+requests
