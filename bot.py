@@ -17,6 +17,6 @@ api = tweepy.API(auth)
 
 while True:
     arg_time = datetime.utcnow() - timedelta(hours=3)
-    api.update_status("[test_arg_time]: " + str(arg_time))
+    api.update_status("empty: scaled 1 dyno")
     time.sleep(INTERVAL)
 
