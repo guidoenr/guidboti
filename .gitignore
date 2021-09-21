@@ -4,3 +4,4 @@ __pycache__/*
 venvv/*
 credentials.py
 status.log
+workers/__pycache__/*

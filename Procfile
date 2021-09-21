@@ -1,1 +1,1 @@
-worker: python worker_dolar.py
+worker: python worker_dollar.py

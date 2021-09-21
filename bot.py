@@ -6,6 +6,7 @@ logging.basicConfig(filename='status.log',
                     filemode='a',
                     format='[%(levelname)s] %(asctime)s: %(message)s',
                     level=logging.DEBUG)
+logging.getLogger('apsscheduler')
 
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
 CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
@@ -29,3 +30,4 @@ def send_dm(message, user):
 
 def log(message):
     logging.info(message)
+
