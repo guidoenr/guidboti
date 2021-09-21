@@ -2,7 +2,10 @@ import os
 import tweepy as tweepy
 import logging
 
-logging.basicConfig(format='[%(levelname)s] %(asctime)s: %(message)s')
+logging.basicConfig(filename='status.log',
+                    filemode='a',
+                    format='[%(levelname)s] %(asctime)s: %(message)s',
+                    level=logging.DEBUG)
 
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
 CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
@@ -24,3 +27,5 @@ def send_dm(message, user):
     logging.warning("dm sent to @{}: {} ".format(user, message))
 
 
+def log(message):
+    logging.info(message)
