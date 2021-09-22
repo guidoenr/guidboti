@@ -1,1 +1,1 @@
-worker: python worker_dollar.py
+worker: python worker_scheduler.py
