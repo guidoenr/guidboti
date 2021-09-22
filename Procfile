@@ -1,1 +1,1 @@
-worker: python workers/worker_scheduler.py
+worker: python worker_scheduler.py

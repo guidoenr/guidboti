@@ -1,3 +1,4 @@
+import credentials
 import bot
 import constants
 import requests
