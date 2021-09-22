@@ -1,6 +1,7 @@
 import bot
 import constants
 import requests
+import glogger
 from datetime import datetime as dt
 
 dollar_template = """
@@ -21,14 +22,13 @@ def post_dollar_status():
         hour, minute = dt.now().hour, dt.now().minute
         current_time = "{}:{}".format(hour, minute)
         to_tweet = dollar_template.format(current_time, compra, venta)
-        #bot.send_tweet(to_tweet)
-        bot.log(to_tweet)
+        bot.send_tweet(to_tweet)
     else:
-        bot.log("DOLLAR MEP status doesn't changed")
+        glogger.log_warning("the dollar value doesn't changed")
 
 
 def check_dollar_value(new_compra, new_venta):
-    stats_file = open(file='stats.dat', mode='r')
+    stats_file = open(file='values.dat', mode='r')
     old_compra = stats_file.readline()
     old_venta = stats_file.readline()
     stats_file.close()
@@ -36,7 +36,7 @@ def check_dollar_value(new_compra, new_venta):
 
 
 def update_dollar_value(new_compra, new_venta):
-    with open(file='stats.dat', mode='w') as new_file:
+    with open(file='values.dat', mode='w') as new_file:
         new_file.write(str(new_compra) + '\n')
         new_file.write(str(new_venta))
 
